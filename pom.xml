@@ -23,6 +23,7 @@
 		<trimou.version>1.8.2.Final</trimou.version>
 		<hbs.version>4.0.1</hbs.version>
 		<rocker.version>1.3.0</rocker.version>
+		<jte.version>0.4.0</jte.version>
 	</properties>
 
 	<licenses>
@@ -68,6 +69,23 @@
                     </execution>
                 </executions>
             </plugin>
+			<plugin>
+				<groupId>org.jusecase</groupId>
+				<artifactId>jte-maven-compiler-plugin</artifactId>
+				<version>${jte.version}</version>
+				<configuration>
+					<sourceDirectory>src/main/resources/templates</sourceDirectory>
+					<targetDirectory>jte</targetDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>precompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -164,6 +182,11 @@
 			<groupId>javax.annotation</groupId>
 			<artifactId>javax.annotation-api</artifactId>
 			<version>1.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jusecase</groupId>
+			<artifactId>jte</artifactId>
+			<version>${jte.version}</version>
 		</dependency>
 
 		<dependency>
