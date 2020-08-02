@@ -23,7 +23,7 @@
 		<trimou.version>1.8.2.Final</trimou.version>
 		<hbs.version>4.0.1</hbs.version>
 		<rocker.version>1.3.0</rocker.version>
-		<jte.version>0.4.0</jte.version>
+		<jte.version>0.8.0</jte.version>
 	</properties>
 
 	<licenses>
@@ -71,11 +71,12 @@
             </plugin>
 			<plugin>
 				<groupId>org.jusecase</groupId>
-				<artifactId>jte-maven-compiler-plugin</artifactId>
+				<artifactId>jte-maven-plugin</artifactId>
 				<version>${jte.version}</version>
 				<configuration>
 					<sourceDirectory>src/main/resources/templates</sourceDirectory>
-					<targetDirectory>jte</targetDirectory>
+					<targetDirectory>jte-classes</targetDirectory>
+					<contentType>Plain</contentType>
 				</configuration>
 				<executions>
 					<execution>
@@ -185,7 +186,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.jusecase</groupId>
-			<artifactId>jte</artifactId>
+			<artifactId>jte-runtime</artifactId>
 			<version>${jte.version}</version>
 		</dependency>
 

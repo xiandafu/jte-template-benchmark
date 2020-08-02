@@ -2,6 +2,7 @@ package com.mitchellbosecke.benchmark;
 
 
 import com.mitchellbosecke.benchmark.model.Stock;
+import org.jusecase.jte.ContentType;
 import org.jusecase.jte.TemplateEngine;
 import org.jusecase.jte.output.StringOutput;
 import org.jusecase.jte.output.StringOutputPool;
@@ -19,7 +20,7 @@ import java.util.List;
  * @author casid
  */
 public class Jte extends BaseBenchmark {
-    private final StringOutputPool stringOutputPool = new StringOutputPool();
+    private static final StringOutputPool stringOutputPool = new StringOutputPool();
     private TemplateEngine templateEngine;
     private List<Stock> items;
 
@@ -27,7 +28,7 @@ public class Jte extends BaseBenchmark {
     public void setup() {
         items = Stock.dummyItems();
 
-        templateEngine = TemplateEngine.createPrecompiled(Path.of("jte"));
+        templateEngine = TemplateEngine.createPrecompiled(Path.of("jte-classes"), ContentType.Plain);
         templateEngine.prepareForRendering("stocks.jte");
     }
 
