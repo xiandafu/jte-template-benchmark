@@ -2,10 +2,10 @@ package com.mitchellbosecke.benchmark;
 
 
 import com.mitchellbosecke.benchmark.model.Stock;
-import org.jusecase.jte.ContentType;
-import org.jusecase.jte.TemplateEngine;
-import org.jusecase.jte.output.StringOutput;
-import org.jusecase.jte.output.StringOutputPool;
+import gg.jte.ContentType;
+import gg.jte.TemplateEngine;
+import gg.jte.output.StringOutput;
+import gg.jte.output.StringOutputPool;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Setup;
 
