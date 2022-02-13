@@ -88,6 +88,13 @@ public class ExpectedOutputTest {
         assertOutput(jte.benchmark());
     }
 
+    @Test
+    public void testQuteOutput() throws Exception {
+        Qute qute = new Qute();
+        qute.setup();
+        assertOutput(qute.benchmark());
+    }
+
     private void assertOutput(final String output) throws IOException {
         assertEquals(readExpectedOutputResource(), output.replaceAll("\\s", ""));
     }
